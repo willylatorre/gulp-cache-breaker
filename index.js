@@ -32,7 +32,7 @@ CacheBreaker.prototype.cacheBreakPath = function(base, resource) {
   var extname = path.extname(resource);
   var basename = path.basename(resource, extname);
 
-  return path.join(dirname, basename + '.' + cs.substring(0, 10) + extname);
+  return path.join(dirname, basename + extname + "?v=" + cs.substring(0, 10));
 };
 
 CacheBreaker.prototype.cdnUri = function(base, resource, host, secure) {
